@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#19392d">
+  <meta name="description" content="阿琳的产品与交互作品集。探索 HomeMind、自由工作台、Digest、Starity，以及与 AI 一起创造的日常工具。">
+  <title>ALIN · 一些念头，几个世界。</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' rx='18' fill='%2319392d'/%3E%3Cpath d='M30 8v44M8 30h44M14 14l32 32M14 46l32-32' stroke='%23d8efa2' stroke-width='5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="case-study.css">
+  <link rel="preload" as="image" href="assets/home-front.png">
+  <script src="case-studies.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#homemind">跳到作品</a>
+  <header class="site-header">
+    <a href="#homemind" class="brand" aria-label="阿琳作品集首页"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2v36M2 20h36M7.3 7.3l25.4 25.4M7.3 32.7 32.7 7.3"/></svg><span>ALIN<span class="brand-cn"> / 阿琳</span></span></a>
+    <span class="header-caption">PRODUCT THINKING, MADE TANGIBLE.</span>
+    <nav aria-label="主导航"><a href="#homemind">作品 <sup>04</sup></a><a href="#little-things">探索</a><a href="#about">关于与合作 <span>↗</span></a><a class="nav-pdf" href="downloads/ALIN-Portfolio.pdf" download="ALIN-作品集.pdf" aria-label="下载阿琳作品集 PDF">PDF ↓</a></nav>
+  </header>
+
+  <main>
+    <section class="world world-home is-active" id="homemind" data-world="0" aria-labelledby="home-title">
+      <div class="world-atmosphere" aria-hidden="true"><span class="home-sun"></span><span class="home-orbit orbit-one"></span><span class="home-orbit orbit-two"></span><span class="world-word">feel at home.</span></div>
+      <div class="world-content">
+        <div class="project-copy">
+          <p class="project-kicker"><span class="index">01 / 04</span><span>AI × EVERYDAY LIFE</span></p>
+          <h1 id="home-title">Home<span>Mind</span><i class="title-seed" aria-hidden="true">✳</i></h1>
+          <h2>让家，有一点懂你。</h2>
+          <p class="project-description">从一句日常对话，到一次恰好的安排。<br>让家庭助手在生活里，慢慢学会体贴。</p>
+          <div class="project-tags"><span>AI 产品概念</span><span>交互原型</span><span>移动体验</span></div>
+          <button class="case-link" data-case="homemind">走进这个作品 <span class="round-arrow" aria-hidden="true">↗</span></button>
+        </div>
+        <div class="project-stage home-stage" data-parallax aria-label="HomeMind 真实界面预览">
+          <div class="home-ring" aria-hidden="true"></div>
+          <span class="scene-label label-home">a little more understanding.</span>
+          <button class="phone phone-back" data-zoom="assets/home-growth.png" data-caption="HomeMind · 成长：把反复出现的需要，整理为可以确认的习惯。" aria-label="放大 HomeMind 成长界面"><span class="phone-inner"><img src="assets/home-growth.png" alt="HomeMind 成长页面，展示正在形成和已经学会的清洁习惯" width="430" height="932"></span></button>
+          <button class="phone phone-front" data-zoom="assets/home-front.png" data-caption="HomeMind · 首页：从对话与今日计划开始。" aria-label="放大 HomeMind 首页"><span class="phone-inner"><img src="assets/home-front.png" alt="HomeMind 首页，包含今日计划和与 Rocky 对话的入口" width="430" height="932" fetchpriority="high"></span></button>
+          <div class="floating-caption"><span class="mini-flower" aria-hidden="true">✳</span><span>被听见的小事，<br><b>慢慢成为习惯。</b></span></div>
+          <span class="stage-note">真实界面 · 点击细看 <span>↗</span></span>
+        </div>
+      </div>
+      <div class="world-footer"><span>构思 / 设计 / AI 协同实现</span><a href="#workbench" class="scroll-invite">往下，另一个世界 <span>↓</span></a></div>
+    </section>
+
+    <section class="world world-workbench" id="workbench" data-world="1" aria-labelledby="workbench-title">
+      <div class="world-atmosphere" aria-hidden="true"><span class="desk-glow"></span><span class="desk-grid"></span><span class="world-word">make room.</span></div>
+      <div class="world-content">
+        <div class="project-copy">
+          <p class="project-kicker"><span class="index">02 / 04</span><span>A SPACE OF YOUR OWN</span></p>
+          <h2 class="project-title" id="workbench-title">a little<br><em>workspace.</em></h2>
+          <h3>桌面，长成自己的样子。</h3>
+          <p class="project-description">想法、日记、待办，各有一个舒服的位置。<br>把工作空间的决定权，交回自己手里。</p>
+          <div class="project-tags"><span>阿琳工作台</span><span>自由布局</span><span>桌面应用</span></div>
+          <button class="case-link" data-case="workbench">走进这个作品 <span class="round-arrow" aria-hidden="true">↗</span></button>
+          <p class="interaction-hint"><span>⠿</span> 右边的小组件，可以随手拖一拖。</p>
+        </div>
+        <div class="project-stage desk-stage" data-parallax>
+          <span class="scene-label label-desk">everything, in your own place.</span>
+          <div class="desk-window">
+            <div class="window-bar"><span class="traffic-lights"><i></i><i></i><i></i></span><span>ALIN'S WORKSPACE</span><span class="window-spark">✧</span></div>
+            <div class="desktop-demo" id="desktop-demo" data-desk-theme="dusk" aria-label="工作台交互片段，可以拖动组件并切换壁纸">
+              <div class="desktop-horizon" aria-hidden="true"></div>
+              <div class="desk-widget widget-clock" data-drag style="--x:5%;--y:8%"><button class="drag-handle" aria-label="移动时钟组件，方向键调整位置"><span>◷ 时钟</span><span>⠿</span></button><strong id="live-clock">22:50</strong><p id="live-date">按自己的节奏，开始。</p></div>
+              <div class="desk-widget widget-note" data-drag style="--x:51%;--y:20%"><button class="drag-handle" aria-label="移动便签组件，方向键调整位置"><span>↗ 一个小念头</span><span>⠿</span></button><p>今天，也给好奇心<br>留一个位置。</p><span class="note-sign">take your time.</span></div>
+              <div class="desk-widget widget-todo" data-drag style="--x:19%;--y:48%"><button class="drag-handle" aria-label="移动待办组件，方向键调整位置"><span>☷ 今天的小事</span><span>⠿</span></button><label><input type="checkbox" checked><span>接住一个新想法</span></label><label><input type="checkbox"><span>做出一点小变化</span></label><label><input type="checkbox"><span>留点时间发呆</span></label></div>
+              <div class="desk-theme"><span>换个心情</span><button data-theme="dusk" class="theme-dusk" aria-label="青蓝壁纸" aria-pressed="true"></button><button data-theme="plum" class="theme-plum" aria-label="暮紫壁纸" aria-pressed="false"></button><button data-theme="forest" class="theme-forest" aria-label="森林壁纸" aria-pressed="false"></button></div>
+              <button class="desk-reset" type="button" aria-label="重置桌面组件位置">↺</button>
+              <span class="demo-label">INTERACTIVE PREVIEW</span>
+            </div>
+          </div>
+          <button class="real-shot" data-zoom="assets/workbench-desktop.png" data-caption="阿琳工作台 · 日常桌面实际截图。" aria-label="查看工作台实际桌面截图"><img src="assets/workbench-desktop.png" alt="阿琳工作台日常桌面实际截图" width="2559" height="1599" loading="lazy"><span>查看实图 <b>↗</b></span></button>
+          <span class="stage-note">拖动 / 勾选 / 换壁纸 <span>⤴</span></span>
+        </div>
+      </div>
+      <div class="world-footer"><span>一点秩序，也留一点自由。</span><a href="#digest" class="scroll-invite">接着，看想法如何落地 <span>↓</span></a></div>
+    </section>
+
+    <section class="world world-digest" id="digest" data-world="2" aria-labelledby="digest-title">
+      <div class="world-atmosphere" aria-hidden="true"><span class="digest-orbit"></span><span class="digest-orbit orbit-small"></span><span class="digest-glow"></span><span class="world-word">from idea to done.</span></div>
+      <div class="world-content">
+        <div class="project-copy">
+          <p class="project-kicker"><span class="index">03 / 04</span><span>THOUGHTS INTO MOTION</span></p>
+          <h2 class="project-title" id="digest-title">Digest<span class="title-period">.</span></h2>
+          <h3>让想法，一步步落地。</h3>
+          <p class="project-description">消化、执行、沉淀。<br>让一件事的来处、进展和结果，都看得见。</p>
+          <div class="project-tags"><span>工作看板</span><span>信息组织</span><span>交互与视觉</span></div>
+          <button class="case-link" data-case="digest">走进这个作品 <span class="round-arrow" aria-hidden="true">↗</span></button>
+          <p class="interaction-hint"><span>↔</span> 拉动分界线，看草图如何成为界面。</p>
+        </div>
+        <div class="project-stage digest-stage" data-parallax>
+          <span class="scene-label label-digest">a thought finds its way.</span>
+          <div class="board-window">
+            <div class="window-bar"><span class="traffic-lights"><i></i><i></i><i></i></span><span>DIGEST / FROM SKETCH TO SCREEN</span><span>↗</span></div>
+            <div class="comparison" style="--split:43%">
+              <img class="comparison-image" src="assets/digest-draft.png" alt="Digest 看板早期界面草图" width="1479" height="868" loading="lazy">
+              <img class="comparison-image comparison-after" src="assets/digest-interface.png" alt="Digest 实际界面，展示消化区、执行区和沉淀区" width="2559" height="1506" loading="lazy">
+              <span class="compare-label before-label">草图</span><span class="compare-label after-label">实现</span><span class="compare-line" aria-hidden="true"><span>↔</span></span>
+              <input class="compare-range" type="range" min="0" max="100" value="43" aria-label="对比草图与实现，左右拖动调整">
+            </div>
+          </div>
+          <div class="flow-path" aria-hidden="true"><span><i></i>消化</span><b>⟶</b><span><i></i>执行</span><b>⟶</b><span><i></i>沉淀</span></div>
+          <span class="stage-note">从草图到真实界面 <span>↗</span></span>
+        </div>
+      </div>
+      <div class="world-footer"><span>FROM IDEA → STRUCTURE → INTERFACE</span><a href="#starity" class="scroll-invite">接着，和小纪留下一点微光 <span>↓</span></a></div>
+    </section>
+
+    <section class="world world-starity" id="starity" data-world="3" aria-labelledby="starity-title">
+      <div class="world-atmosphere" aria-hidden="true"><span class="starity-glow"></span><span class="world-word">a little continuity.</span></div>
+      <div class="world-content">
+        <div class="project-copy">
+          <p class="project-kicker"><span class="index">04 / 04</span><span>A LITTLE CONTINUITY</span></p>
+          <h2 class="project-title" id="starity-title">Starity<span class="starity-spark" aria-hidden="true">✧</span></h2>
+          <h3>和小纪，把日常留成微光。</h3>
+          <p class="project-description">回看发生过的事，留下下一步，找回曾经的对话。<br>也让这个入口，长成自己喜欢的样子。</p>
+          <div class="project-tags"><span>个人伴侣看板</span><span>手机实拍</span><span>与小纪协作</span></div>
+          <button class="case-link" data-case="starity">走进这个作品 <span class="round-arrow" aria-hidden="true">↗</span></button>
+          <p class="interaction-hint">时间线 / 任务 / 会话 / 谷子框装扮</p>
+        </div>
+        <div class="project-stage starity-stage" data-parallax aria-label="Starity 手机真实界面">
+          <span class="scene-label label-home">made together, kept close.</span>
+          <button class="phone phone-back" data-zoom="assets/starity-workshop.jpg" data-caption="Starity · 谷子框装扮工坊，阿琳提供的手机实拍。" aria-label="放大 Starity 装扮工坊"><span class="phone-inner"><img src="assets/starity-workshop.jpg" alt="Starity 谷子框装扮工坊的手机实拍" width="573" height="1280" loading="lazy"></span></button>
+          <button class="phone phone-front" data-zoom="assets/starity-timeline.jpg" data-caption="Starity · 日常时间线，阿琳提供的手机实拍。" aria-label="放大 Starity 时间线"><span class="phone-inner"><img src="assets/starity-timeline.jpg" alt="Starity 时间线的手机实拍" width="573" height="1280" loading="lazy"></span></button>
+          <span class="stage-note">阿琳的手机实拍 · 点击细看 <span>↗</span></span>
+        </div>
+      </div>
+      <div class="world-footer"><span>需求 / 审美方向 / 与小纪协同实现</span><a href="#little-things" class="scroll-invite">再看一点小小的陪伴 <span>↓</span></a></div>
+    </section>
+
+    <section class="little-section" id="little-things" aria-labelledby="little-title">
+      <div class="little-heading"><div><p class="eyebrow">LITTLE THINGS, CLOSE BY</p><h2 id="little-title">小小陪伴，<em>刚刚好。</em></h2></div><p>给日常添一点性格。<br>两只住在桌面角落的小猫。</p></div>
+      <div class="little-grid">
+        <article class="little-card little-naituan">
+          <div class="little-stage"><span class="little-note">a soft little hello.</span><img src="assets/pet-naituan.png" alt="奶团桌宠，手绘小猫和问候气泡" width="445" height="512" loading="lazy"></div>
+          <div class="little-copy"><p class="little-kind">01 / 手绘桌宠</p><h3>奶团</h3><p>摸摸、喂食、钻纸箱。<br>把轻轻的回应，放进忙碌的间隙。</p><button type="button" data-pet="naituan">看几个动作 <span aria-hidden="true">↗</span></button></div>
+        </article>
+        <article class="little-card little-pixel">
+          <div class="little-stage"><span class="little-note">a tiny pixel companion.</span><img src="assets/pet-pixel.png" alt="像素小白猫桌宠，蓝眼睛和粉色爪垫" width="768" height="768" loading="lazy"></div>
+          <div class="little-copy"><p class="little-kind">02 / 像素桌宠</p><h3>像素小白猫</h3><p>散步、舔爪、打个盹。<br>不必一直互动，也能安静待在身边。</p><button type="button" data-pet="pixel">看几个动作 <span aria-hidden="true">↗</span></button></div>
+        </article>
+      </div>
+      <p class="little-footnote">Windows 桌面小作品 · 使用原作素材展示动作</p>
+    </section>
+
+    <section class="lab-section" id="lab" aria-labelledby="lab-title">
+      <div class="lab-heading"><p class="eyebrow">THE ONGOING EXPLORATIONS</p><h2 id="lab-title">好奇心，<em>还在继续。</em></h2><p>一些从自己身边长出来的 AI 与工具实验。</p></div>
+      <div class="lab-layout">
+        <div class="lab-list" role="tablist" aria-label="更多项目">
+          <button id="lab-tab-stone" class="lab-item is-selected" role="tab" aria-selected="true" aria-controls="lab-detail" data-lab="stone"><span>01</span><strong>Stone <small>石头</small></strong><span>记忆 / 连续性</span><b>↗</b></button>
+          <button id="lab-tab-xiaopi" class="lab-item" role="tab" aria-selected="false" aria-controls="lab-detail" data-lab="xiaopi" tabindex="-1"><span>02</span><strong>Xiaopi <small>小屁</small></strong><span>移动端 / 工具连接</span><b>↗</b></button>
+        </div>
+        <div class="lab-detail" id="lab-detail" role="tabpanel" aria-labelledby="lab-tab-stone" tabindex="0"><span class="lab-symbol" aria-hidden="true">◈</span><p class="eyebrow" id="lab-type">AN AI WITH CONTINUITY</p><h3 id="lab-detail-title">每次重新开始，<br>也能接住过去的自己。</h3><p id="lab-description">围绕对话消化、记忆召回与上下文组织持续探索。基于开源项目定制，从 Reasonix 到 DSH，寻找更贴近个人需要的实现方式。</p><div class="lab-chips" id="lab-chips"><span>对话消化</span><span>记忆召回</span><span>开源定制</span></div><p class="lab-status" id="lab-status">个人系统 · 持续迭代，部分插件仍在验证</p></div>
+      </div>
+    </section>
+
+    <section class="process-strip" id="approach" aria-labelledby="approach-title">
+      <div class="process-heading"><p class="eyebrow">HOW I MAKE THINGS</p><h2 id="approach-title">从身边的问题开始，<br>把想法做成可以试的东西。</h2><p>四个作品有不同的样子，也有相近的出发点：让工具更贴近人的日常。</p></div>
+      <div class="process-grid">
+        <article><span class="process-number">01 / NOTICE</span><h3>先找具体的不顺手</h3><p>一次难以说明的安排、一张固定的桌面、一个没有去处的念头。先说清场景，再决定需要怎样的工具。</p></article>
+        <article><span class="process-number">02 / MAKE</span><h3>把关系变成可见的体验</h3><p>用页面、状态和操作表达想法。我负责需求与方向，借助 AI 推进实现，把抽象构思变成可以讨论的原型。</p></article>
+        <article><span class="process-number">03 / REFINE</span><h3>在试用中继续调整</h3><p>看哪里仍有歧义、哪里增加了负担。保留有用的部分，也记录下一步要验证的问题，让作品继续生长。</p></article>
+      </div>
+    </section>
+
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="about-top"><p class="eyebrow">A LITTLE ABOUT ME</p><span>ALIN / 阿琳</span></div>
+      <div class="about-content"><h2 id="about-title">在想法和现实之间，<br>我喜欢<span>动手做一点。</span></h2><div><p>我是阿琳，关注 AI 怎样进入真实生活，也喜欢让工具顺着人的思路工作。</p><p>我从需求与体验构思开始，借助 AI 推进实现，再通过具体界面和可体验的原型，继续讨论哪里值得改进。</p><p>如果你也在探索 AI 产品、个人工具或一个还没成形的想法，欢迎一起聊场景、理体验、做原型。</p><div class="about-skills"><span>产品构思</span><span>交互设计</span><span>AI 协同实现</span></div><div class="case-download"><a href="downloads/ALIN-Portfolio.pdf" download="ALIN-作品集.pdf">带走一份作品集 PDF <span aria-hidden="true">↓</span></a></div></div></div>
+      <div class="contact-block"><div><span class="availability"><i></i> 开放 AI 产品与技术合作</span><h3>下一个想法，<em>一起做？</em></h3></div><div class="contact-actions"><a href="mailto:1394960816@qq.com" class="email-link">1394960816@qq.com <span>↗</span></a><button type="button" id="copy-email">复制邮箱 <span>⧉</span></button><span id="copy-status" role="status" aria-live="polite"></span></div></div>
+      <footer><span>© 2026 ALIN</span><span>一些念头，几个世界。</span><a href="#homemind">回到第一个世界 ↑</a></footer>
+    </section>
+  </main>
+
+  <nav class="world-switcher" aria-label="切换作品"><a href="#homemind" class="is-current" aria-current="location"><span>01</span><b>HomeMind</b></a><a href="#workbench"><span>02</span><b>工作台</b></a><a href="#digest"><span>03</span><b>Digest</b></a><a href="#starity"><span>04</span><b>Starity</b></a><span class="switcher-progress"><i></i></span></nav>
+  <div class="pointer-label" aria-hidden="true">VIEW ↗</div>
+  <dialog id="case-dialog" class="case-dialog" aria-labelledby="case-title"><div class="case-topbar"><a href="#homemind" class="case-brand" data-close>ALIN / SELECTED WORK</a><button class="close-button" data-close aria-label="关闭项目详情">返回作品 <span>×</span></button></div><div id="case-content"></div></dialog>
+  <dialog id="lightbox" class="lightbox" aria-label="作品图片大图"><button class="lightbox-close" type="button" aria-label="关闭大图">关闭 ×</button><img id="lightbox-image" alt=""><p id="lightbox-caption"></p></dialog>
+  <dialog id="pet-dialog" class="pet-dialog" aria-labelledby="pet-title"><button class="pet-close" type="button" aria-label="关闭桌宠展示">关闭 ×</button><div class="pet-layout"><div class="pet-preview"><img id="pet-image" alt=""></div><div class="pet-description"><p class="eyebrow">A LITTLE COMPANION</p><h2 id="pet-title"></h2><p id="pet-intro"></p><div id="pet-actions" class="pet-actions" aria-label="选择桌宠动作"></div><p id="pet-status" class="pet-status" role="status" aria-live="polite">选一个动作，看看它的回应。</p><p class="pet-caption">原作动作展示 · 每次播放几秒后回到静止</p></div></div></dialog>
+</body>
+</html>
+
