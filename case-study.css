@@ -376,3 +376,16 @@
 @media (prefers-reduced-motion: reduce) {
   .layer, .explode-labels li, .naituan-play .round-arrow { transition: none; }
 }
+
+/* Quieter worlds: one title, one line, one way in, one picture. */
+.world-footer { justify-content: flex-end; }
+.world-workbench .real-shot { display: none; }
+@media (max-width: 760px) {
+  .world-switcher, .world-footer { display: none; }
+  .world { padding-bottom: 72px; }
+  .world-workbench .desk-window { display: none; }
+  .world-workbench .desk-stage { height: auto; padding-bottom: 0; }
+  .world-workbench .real-shot { display: block; position: relative; inset: auto; width: 100%; transform: none; border: 0; border-radius: 10px; box-shadow: 0 18px 40px #00172555; }
+  .world-workbench .real-shot img { aspect-ratio: auto; }
+  .world-workbench .real-shot > span { font-size: 10px; padding: 9px 12px; }
+}
