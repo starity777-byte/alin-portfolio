@@ -120,6 +120,27 @@ caseDialog.addEventListener('scroll', () => {
 
 const lightbox = $('#lightbox');
 
+// 奶团小屋 exploded view: opens once on arrival, then the visitor can fold it back.
+const explode = $('[data-explode]');
+if (explode) {
+  const toggle = $('.explode-toggle', explode);
+  const setAssembled = assembled => {
+    explode.classList.toggle('is-assembled', assembled);
+    toggle.textContent = assembled ? '拆开看看' : '合起来看';
+    toggle.setAttribute('aria-pressed', String(assembled));
+  };
+  toggle.addEventListener('click', () => setAssembled(!explode.classList.contains('is-assembled')));
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setAssembled(true);
+    const watcher = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      watcher.disconnect();
+      setTimeout(() => setAssembled(false), 350);
+    }, {threshold: .45});
+    watcher.observe(explode);
+  }
+}
+
 function showImage(source, caption) {
   const img = $('#lightbox-image');
   img.src = source;
