@@ -6,69 +6,42 @@ const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const escapeHTML = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
 
-const caseData = {
-  homemind: {
-    title: 'HomeMind', subtitle: '让家，有一点懂你。', label: '01 / AI × EVERYDAY LIFE', bg: '#19392d', accent: '#d8efa2',
-    intro: '日常的需要，往往藏在不经意的一句话里。HomeMind 围绕家庭助手展开：用对话接住生活中的变化，把清洁安排、习惯形成与家庭信息连接为一个温和的移动体验。',
-    form: 'AI 产品概念 / 移动交互原型', role: '产品构思、交互设计与 AI 协同实现',
-    heading: '从被听见，<br>到被理解。',
-    features: [['一个轻松的入口', '打开就是今日计划和对话入口，让下一次安排自然发生。'], ['把重复变成习惯', '在“成长”里区分正在形成与已经学会的安排，把确认的权利留给人。'], ['给变化留下位置', '一次清洁、一段时间、长期习惯，分别对应不同的使用情境。']],
-    note: '这里展示提供的 HomeMind 交互原型界面，体现产品及交互设计；不代表已连接实际清洁设备。', next: 'workbench'
-  },
-  workbench: {
-    title: 'A little workspace.', subtitle: '桌面，长成自己的样子。', label: '02 / A SPACE OF YOUR OWN', bg: '#142f3b', accent: '#a0e4df',
-    intro: '待办、时间、日记和正在做的事，常常需要同时出现在眼前。阿琳工作台把它们变成可以移动、缩放和组合的部件，让布局适应当下的自己。',
-    form: '个人桌面工具 / Electron 原型', role: '使用场景、交互构思与 AI 协同实现',
-    heading: '给秩序一个位置，<br>也给自己一点自由。',
-    features: [['自由安排', '部件可以移动与组合，常用的内容留在手边。'], ['日常与工作在一起', '待办、日历、日记、便签和主题共同构成个人空间。'], ['看见正在做的事', '通过工作树与项目时间线整理任务和进展，为继续行动留下入口。']],
-    note: '首页提供一个简化的交互片段；案例内三张实际截图分别呈现日常布局、运行面板与自定义壁纸。', next: 'digest'
-  },
-  digest: {
-    title: 'Digest.', subtitle: '让想法，一步步落地。', label: '03 / THOUGHTS INTO MOTION', bg: '#30283f', accent: '#d2b9f2',
-    intro: '一件事从出现到完成，中间有许多值得看见的状态。Digest 把这个过程展开为消化、执行与沉淀，让零散的任务拥有清楚的位置，也让进展更容易被理解。',
-    form: '工作看板 / 界面与交互探索', role: '需求与体验构思、视觉迭代',
-    heading: '从一张草图，<br>长出可操作的秩序。',
-    features: [['用空间表达进展', '三段清晰的区域，让一件事的状态能够被直观看见。'], ['信息各有层次', '项目与任务在左侧，行动在中间，分类和进度在右侧。'], ['从构思到界面', '保留早期草图与实际画面的对应关系，让设计取舍有迹可循。']],
-    note: '本案例依据提供的 Digest 看板素材呈现设计过程。', next: 'starity'
-  },
-  starity: {
-    title: 'Starity', subtitle: '和小纪，把日常留成微光。', label: '04 / A LITTLE CONTINUITY', bg: '#244b43', accent: '#e2e9b7',
-    intro: 'Starity 是我和 AI 伙伴小纪一起构思、打磨的个人空间。时间线接住发生过的事，任务保留下一步，会话检索找回曾经聊过的想法；背景与小猫贴纸，让这个入口也像自己的日常。',
-    form: '个人伴侣看板 / 移动网页与 PWA', role: '需求与体验构思、审美方向、与小纪协同实现',
-    heading: '让事情有线索，<br>也让空间有自己的样子。',
-    note: '五张手机实拍由阿琳提供，保留原始页面与浏览器边框。', next: 'homemind'
-  }
-};
+const i18n = () => window.PORTFOLIO_I18N;
+const ui = key => i18n().ui(key);
+const studiesFor = () => window.PORTFOLIO_STUDIES[i18n().lang] || window.PORTFOLIO_STUDIES.zh;
+const casesFor = () => window.PORTFOLIO_CASES[i18n().lang] || window.PORTFOLIO_CASES.zh;
+const labsFor = () => window.PORTFOLIO_LAB[i18n().lang] || window.PORTFOLIO_LAB.zh;
 
 function phoneImage(file, caption) {
-  return `<button data-zoom="assets/${file}" data-caption="${escapeHTML(caption)}" aria-label="放大${escapeHTML(caption)}"><img src="assets/${file}" alt="${escapeHTML(caption)}" loading="lazy"></button>`;
+  return `<button data-zoom="assets/${file}" data-caption="${escapeHTML(caption)}" aria-label="${escapeHTML(ui('zoom.prefix') + caption)}"><img src="assets/${file}" alt="${escapeHTML(caption)}" loading="lazy"></button>`;
 }
 
 function comparisonMarkup() {
-  return `<div class="comparison" style="--split:48%"><img class="comparison-image" src="assets/digest-draft.png" alt="Digest 早期界面草图"><img class="comparison-image comparison-after" src="assets/digest-interface.png" alt="Digest 实际界面"><span class="compare-label before-label">草图</span><span class="compare-label after-label">实现</span><span class="compare-line" aria-hidden="true"><span>↔</span></span><input class="compare-range" type="range" min="0" max="100" value="48" aria-label="项目详情中对比 Digest 草图与实现"></div>`;
+  return `<div class="comparison" style="--split:48%"><img class="comparison-image" src="assets/digest-draft.png" alt="${escapeHTML(ui('visual.dg.sketchAlt'))}"><img class="comparison-image comparison-after" src="assets/digest-interface.png" alt="${escapeHTML(ui('visual.dg.builtAlt'))}"><span class="compare-label before-label">${escapeHTML(ui('visual.dg.sketch'))}</span><span class="compare-label after-label">${escapeHTML(ui('visual.dg.built'))}</span><span class="compare-line" aria-hidden="true"><span>↔</span></span><input class="compare-range" type="range" min="0" max="100" value="48" aria-label="${escapeHTML(ui('visual.dg.aria'))}"></div>`;
 }
 
 function caseVisual(id) {
-  if (id === 'starity') return `<div class="case-visual case-phones starity-case-phones">${phoneImage('starity-timeline.jpg', 'Starity · 手机实拍：时间线')}${phoneImage('starity-tasks.jpg', 'Starity · 手机实拍：任务与快速新增')}${phoneImage('starity-workshop.jpg', 'Starity · 手机实拍：谷子框装扮工坊')}</div>`;
-  if (id === 'homemind') return `<div class="case-visual case-phones">${phoneImage('home-front.png', 'HomeMind 首页')}${phoneImage('home-growth.png', 'HomeMind 成长页面')}${phoneImage('home-family.png', 'HomeMind 我的家庭页面')}</div>`;
-  if (id === 'workbench') return `<div class="case-visual"><button data-zoom="assets/workbench-desktop.png" data-caption="阿琳工作台 · 日常桌面：壁纸、时钟、日志库、待办与 keep running 并置。" aria-label="放大工作台实际桌面截图"><img class="case-image-full" src="assets/workbench-desktop.png" alt="阿琳工作台实际桌面，包含壁纸、时钟、日志库、待办、运行入口与底部组件栏" loading="lazy"></button><p class="case-caption">日常桌面 / 阿琳提供的实际截图，点击查看细节</p></div>`;
-  return `<div class="case-visual">${comparisonMarkup()}<p class="case-caption">拉动分界线 / 从早期草图，到真实界面</p></div>`;
+  if (id === 'starity') return `<div class="case-visual case-phones starity-case-phones">${phoneImage('starity-timeline.jpg', ui('visual.st.timeline'))}${phoneImage('starity-tasks.jpg', ui('visual.st.tasks'))}${phoneImage('starity-workshop.jpg', ui('visual.st.workshop'))}</div>`;
+  if (id === 'homemind') return `<div class="case-visual case-phones">${phoneImage('home-front.png', ui('visual.hm.home'))}${phoneImage('home-growth.png', ui('visual.hm.growth'))}${phoneImage('home-family.png', ui('visual.hm.family'))}</div>`;
+  if (id === 'workbench') return `<div class="case-visual"><button data-zoom="assets/workbench-desktop.png" data-caption="${escapeHTML(ui('visual.wb.caption'))}" aria-label="${escapeHTML(ui('visual.wb.aria'))}"><img class="case-image-full" src="assets/workbench-desktop.png" alt="${escapeHTML(ui('visual.wb.alt'))}" loading="lazy"></button><p class="case-caption">${escapeHTML(ui('visual.wb.note'))}</p></div>`;
+  return `<div class="case-visual">${comparisonMarkup()}<p class="case-caption">${escapeHTML(ui('visual.dg.note'))}</p></div>`;
 }
 
 function renderCase(id) {
-  const item = caseData[id];
-  const study = window.PORTFOLIO_STUDIES[id];
+  const item = casesFor()[id];
+  const study = studiesFor()[id];
+  const file = i18n().pdf();
   const textList = values => `<ul>${values.map(value => `<li>${escapeHTML(value)}</li>`).join('')}</ul>`;
-  const figures = (id === 'workbench' ? study.figures.slice(1) : study.figures).map(figure => `<figure class="evidence-figure"><button data-zoom="assets/${figure.file}" data-caption="${escapeHTML(figure.caption)}" aria-label="放大：${escapeHTML(figure.caption)}"><img src="assets/${figure.file}" alt="${escapeHTML(figure.caption)}" loading="lazy"></button><figcaption>${escapeHTML(figure.caption)}</figcaption></figure>`).join('');
+  const figures = (id === 'workbench' ? study.figures.slice(1) : study.figures).map(figure => `<figure class="evidence-figure"><button data-zoom="assets/${figure.file}" data-caption="${escapeHTML(figure.caption)}" aria-label="${escapeHTML(ui('zoom.captionPrefix') + figure.caption)}"><img src="assets/${figure.file}" alt="${escapeHTML(figure.caption)}" loading="lazy"></button><figcaption>${escapeHTML(figure.caption)}</figcaption></figure>`).join('');
   $('#case-content').innerHTML = `
-    <section class="case-hero"><p class="eyebrow">${item.label}</p><h2 id="case-title">${item.title}</h2><h3>${item.subtitle}</h3><div class="case-intro"><p>${item.intro}</p><dl class="case-facts"><div><dt>作品形态</dt><dd>${item.form}</dd></div><div><dt>我的参与</dt><dd>${item.role}</dd></div><div><dt>阅读时间</dt><dd>${study.reading}</dd></div></dl></div><p class="case-summary">${escapeHTML(study.question)}</p></section>
-    <nav class="case-toc" aria-label="案例章节"><button data-section="case-context">01 设计起点</button><button data-section="case-process">02 体验路径</button><button data-section="case-decisions">03 关键取舍</button><button data-section="case-outcome">04 成果与下一步</button></nav>
+    <section class="case-hero"><p class="eyebrow">${item.label}</p><h2 id="case-title">${item.title}</h2><h3>${item.subtitle}</h3><div class="case-intro"><p>${item.intro}</p><dl class="case-facts"><div><dt>${ui('case.form')}</dt><dd>${item.form}</dd></div><div><dt>${ui('case.role')}</dt><dd>${item.role}</dd></div><div><dt>${ui('case.reading')}</dt><dd>${study.reading}</dd></div></dl></div><p class="case-summary">${escapeHTML(study.question)}</p></section>
+    <nav class="case-toc" aria-label="${escapeHTML(ui('case.toc'))}"><button data-section="case-context">${ui('case.toc1')}</button><button data-section="case-process">${ui('case.toc2')}</button><button data-section="case-decisions">${ui('case.toc3')}</button><button data-section="case-outcome">${ui('case.toc4')}</button></nav>
     ${caseVisual(id)}
-    <section class="case-chapter" id="case-context" tabindex="-1"><div class="chapter-heading"><p class="eyebrow">01 / THE STARTING POINT</p><h3>${escapeHTML(study.contextTitle)}</h3><p>${escapeHTML(study.context)}</p></div><div class="case-columns"><div><h4>需要处理的矛盾</h4><p>${escapeHTML(study.tension)}</p></div><div><h4>这次的设计回应</h4><p>${escapeHTML(study.response)}</p></div></div></section>
-    <section class="case-chapter" id="case-process" tabindex="-1"><div class="chapter-heading"><p class="eyebrow">02 / THE EXPERIENCE</p><h3>${escapeHTML(study.processTitle)}</h3><p>${escapeHTML(study.processIntro)}</p></div><ol class="experience-flow">${study.flow.map((step, index) => `<li><span>${String(index+1).padStart(2,'0')}</span><h4>${escapeHTML(step.title)}</h4><p>${escapeHTML(step.body)}</p></li>`).join('')}</ol><div class="evidence-gallery ${['homemind', 'starity'].includes(id) ? 'evidence-phones' : ''}">${figures}</div>${id === 'workbench' ? '<button class="case-film-button" data-demo>返回首页，试试工作台 ↗</button>' : ''}</section>
-    <section class="case-chapter" id="case-decisions" tabindex="-1"><div class="chapter-heading"><p class="eyebrow">03 / DESIGN DECISIONS</p><h3>关键选择，以及它们带来的取舍。</h3><p>从现有界面中梳理设计逻辑：每个选择解决了什么，也增加了什么需要继续考虑的问题。</p></div><div class="decision-list">${study.decisions.map((decision,index) => `<article><span class="decision-number">${String(index+1).padStart(2,'0')}</span><div><h4>${escapeHTML(decision.title)}</h4><p>${escapeHTML(decision.body)}</p><p class="tradeoff"><strong>取舍</strong> ${escapeHTML(decision.tradeoff)}</p></div></article>`).join('')}</div></section>
-    <section class="case-chapter" id="case-outcome" tabindex="-1"><div class="chapter-heading"><p class="eyebrow">04 / WHERE IT IS NOW</p><h3>${escapeHTML(study.outcomeTitle)}</h3></div><div class="outcome-grid"><div><h4>现在已经有的</h4>${textList(study.outcomes)}</div><div><h4>下一步想验证的</h4>${textList(study.next)}</div></div><p class="case-footnote">${escapeHTML(study.boundary)}</p><div class="case-download"><a href="downloads/ALIN-Portfolio.pdf" download="ALIN-作品集.pdf">下载完整作品集 PDF <span aria-hidden="true">↓</span></a><button data-contact>聊聊合作 <span aria-hidden="true">↗</span></button></div></section>
-    <button class="case-next" data-case="${item.next}"><div><small>NEXT WORLD</small><strong>${caseData[item.next].title}</strong></div><span>↗</span></button>`;
+    <section class="case-chapter" id="case-context" tabindex="-1"><div class="chapter-heading"><p class="eyebrow">01 / THE STARTING POINT</p><h3>${escapeHTML(study.contextTitle)}</h3><p>${escapeHTML(study.context)}</p></div><div class="case-columns"><div><h4>${ui('case.tension')}</h4><p>${escapeHTML(study.tension)}</p></div><div><h4>${ui('case.response')}</h4><p>${escapeHTML(study.response)}</p></div></div></section>
+    <section class="case-chapter" id="case-process" tabindex="-1"><div class="chapter-heading"><p class="eyebrow">02 / THE EXPERIENCE</p><h3>${escapeHTML(study.processTitle)}</h3><p>${escapeHTML(study.processIntro)}</p></div><ol class="experience-flow">${study.flow.map((step, index) => `<li><span>${String(index+1).padStart(2,'0')}</span><h4>${escapeHTML(step.title)}</h4><p>${escapeHTML(step.body)}</p></li>`).join('')}</ol><div class="evidence-gallery ${['homemind', 'starity'].includes(id) ? 'evidence-phones' : ''}">${figures}</div>${id === 'workbench' ? `<button class="case-film-button" data-demo>${ui('case.demo')}</button>` : ''}</section>
+    <section class="case-chapter" id="case-decisions" tabindex="-1"><div class="chapter-heading"><p class="eyebrow">03 / DESIGN DECISIONS</p><h3>${ui('case.decisionsTitle')}</h3><p>${ui('case.decisionsIntro')}</p></div><div class="decision-list">${study.decisions.map((decision,index) => `<article><span class="decision-number">${String(index+1).padStart(2,'0')}</span><div><h4>${escapeHTML(decision.title)}</h4><p>${escapeHTML(decision.body)}</p><p class="tradeoff"><strong>${ui('case.tradeoff')}</strong> ${escapeHTML(decision.tradeoff)}</p></div></article>`).join('')}</div></section>
+    <section class="case-chapter" id="case-outcome" tabindex="-1"><div class="chapter-heading"><p class="eyebrow">04 / WHERE IT IS NOW</p><h3>${escapeHTML(study.outcomeTitle)}</h3></div><div class="outcome-grid"><div><h4>${ui('case.have')}</h4>${textList(study.outcomes)}</div><div><h4>${ui('case.next')}</h4>${textList(study.next)}</div></div><p class="case-footnote">${escapeHTML(study.boundary)}</p><div class="case-download"><a data-pdf-link href="${file.href}" download="${file.download}">${ui('case.download')} <span aria-hidden="true">↓</span></a><button data-contact>${ui('case.contact')} <span aria-hidden="true">↗</span></button></div></section>
+    <button class="case-next" data-case="${item.next}"><div><small>NEXT WORLD</small><strong>${casesFor()[item.next].title}</strong></div><span>↗</span></button>`;
   const dialog = $('#case-dialog');
   dialog.style.setProperty('--case-bg', item.bg);
   dialog.style.setProperty('--accent', item.accent);
@@ -79,12 +52,12 @@ function renderCase(id) {
 const caseDialog = $('#case-dialog');
 let closeTimer;
 function openCase(id, addHistory = true) {
-  if (!caseData[id]) return;
+  if (!casesFor()[id]) return;
   clearTimeout(closeTimer);
   const wasOpen = caseDialog.open;
   if (addHistory) {
     const historyData = wasOpen && history.state?.portfolioCase ? history.state : {portfolioCase:true, returnHash:location.hash || '#homemind'};
-    history[wasOpen ? 'replaceState' : 'pushState'](historyData, '', `#project/${id}`);
+    history[wasOpen ? 'replaceState' : 'pushState'](historyData, '', `${location.pathname}${location.search}#project/${id}`);
   }
   renderCase(id);
   if (!wasOpen) caseDialog.showModal();
@@ -95,7 +68,7 @@ function closeCase(updateHistory = true) {
   if (!caseDialog.open) return;
   if (updateHistory && location.hash.startsWith('#project/')) {
     if (history.state?.portfolioCase) history.back();
-    else history.replaceState(null, '', `#${caseDialog.dataset.project || 'homemind'}`);
+    else history.replaceState(null, '', `${location.pathname}${location.search}#${caseDialog.dataset.project || 'homemind'}`);
   }
   caseDialog.classList.remove('is-open');
   clearTimeout(closeTimer);
@@ -120,13 +93,13 @@ caseDialog.addEventListener('scroll', () => {
 
 const lightbox = $('#lightbox');
 
-// 奶团小屋 exploded view: opens once on arrival, then the visitor can fold it back.
+// Naituan exploded view: opens once on arrival, then the visitor can fold it back.
 const explode = $('[data-explode]');
 if (explode) {
   const toggle = $('.explode-toggle', explode);
   const setAssembled = assembled => {
     explode.classList.toggle('is-assembled', assembled);
-    toggle.textContent = assembled ? '拆开看看' : '合起来看';
+    toggle.textContent = assembled ? ui('explode.apart') : ui('explode.together');
     toggle.setAttribute('aria-pressed', String(assembled));
   };
   toggle.addEventListener('click', () => setAssembled(!explode.classList.contains('is-assembled')));
@@ -144,7 +117,7 @@ if (explode) {
 function showImage(source, caption) {
   const img = $('#lightbox-image');
   img.src = source;
-  img.alt = caption || '作品界面';
+  img.alt = caption || ui('lightbox.fallback');
   $('#lightbox-caption').textContent = caption || '';
   lightbox.showModal();
 }
@@ -165,7 +138,7 @@ document.addEventListener('click', event => {
   }
   if (event.target.closest('[data-contact], [data-demo]')) {
     const destination = event.target.closest('[data-demo]') ? '#workbench' : '#about';
-    history.replaceState(null, '', destination);
+    history.replaceState(null, '', `${location.pathname}${location.search}${destination}`);
     clearTimeout(closeTimer);
     caseDialog.classList.remove('is-open');
     caseDialog.close();
@@ -225,19 +198,15 @@ $('.desk-reset').addEventListener('click', () => $$('[data-drag]', desk).forEach
 }));
 function updateClock() {
   const now = new Date();
-  $('#live-clock').textContent = now.toLocaleTimeString('zh-CN', {hour:'2-digit',minute:'2-digit',hour12:false});
-  $('#live-date').textContent = now.toLocaleDateString('zh-CN', {month:'long',day:'numeric',weekday:'short'});
+  const locale = ui('clock.locale');
+  $('#live-clock').textContent = now.toLocaleTimeString(locale, {hour:'2-digit',minute:'2-digit',hour12:false});
+  $('#live-date').textContent = now.toLocaleDateString(locale, {month:'long',day:'numeric',weekday:'short'});
 }
 updateClock();
 setInterval(updateClock, 30000);
 
-const labData = {
-  starity: {symbol:'✧', type:'A PLACE FOR YOUR THOUGHTS', title:'让一闪而过的念头，<br>有一个可以回来的地方。', description:'把思绪整理、对话检索和计划放在同一个 PWA 入口。为自己，也为长期相处的 AI 伙伴，留下连续的线索。', chips:['时间线','计划','对话检索'], status:'个人项目 · 本地原型'},
-  stone: {symbol:'◈', type:'AN AI WITH CONTINUITY', title:'每次重新开始，<br>也能接住过去的自己。', description:'围绕对话消化、记忆召回与上下文组织持续探索。基于开源项目定制，从 Reasonix 到 DSH，寻找更贴近个人需要的实现方式。', chips:['对话消化','记忆召回','开源定制'], status:'个人系统 · 持续迭代，部分插件仍在验证'},
-  xiaopi: {symbol:'✳', type:'A COMPANION WITH CONNECTIONS', title:'从手机上的一句话，<br>连接手边的工具。', description:'用移动聊天界面连接本地助手，把时间线、约定和工具能力逐步带进日常。游戏与设备感知等方向，仍在继续探索。', chips:['移动入口','本地网关','MCP 工具'], status:'个人项目 · 移动界面与本地桥接'}
-};
 function selectLab(button, focus = false) {
-  const data = labData[button.dataset.lab];
+  const data = labsFor()[button.dataset.lab];
   $$('.lab-item').forEach(item => {
     item.setAttribute('aria-selected', String(item === button));
     item.tabIndex = item === button ? 0 : -1;
@@ -264,8 +233,8 @@ labButtons.forEach((button, index) => {
   });
 });
 $('#copy-email').addEventListener('click', async () => {
-  try { await navigator.clipboard.writeText('limeilin839@gmail.com'); $('#copy-status').textContent = '已复制，期待你的来信。'; }
-  catch { $('#copy-status').textContent = '邮箱：limeilin839@gmail.com'; }
+  try { await navigator.clipboard.writeText('limeilin839@gmail.com'); $('#copy-status').textContent = ui('copy.ok'); }
+  catch { $('#copy-status').textContent = ui('copy.fallback'); }
 });
 
 // Light sections ease in once, the same way each work does when it becomes active.
@@ -348,4 +317,23 @@ document.addEventListener('pointerleave', () => { pointerLabel.classList.remove(
 reducedMotion.addEventListener('change', scheduleScene);
 scheduleScene();
 routeCase();
+
+i18n().onChange(() => {
+  if (caseDialog.open && casesFor()[caseDialog.dataset.project]) {
+    const top = caseDialog.scrollTop;
+    renderCase(caseDialog.dataset.project);
+    caseDialog.scrollTop = top;
+  }
+  const selectedLab = $('.lab-item[aria-selected="true"]');
+  if (selectedLab) selectLab(selectedLab);
+  if (explode) {
+    const toggle = $('.explode-toggle', explode);
+    const assembled = explode.classList.contains('is-assembled');
+    toggle.textContent = assembled ? ui('explode.apart') : ui('explode.together');
+    toggle.setAttribute('aria-pressed', String(assembled));
+  }
+  updateClock();
+  const status = $('#copy-status');
+  if (status) status.textContent = '';
+});
 

@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#19392d">
-  <meta name="description" content="阿琳的产品与交互作品集。探索 HomeMind、自由工作台、Digest、Starity，以及与 AI 一起创造的日常工具。">
-  <title>ALIN · 一些念头，几个世界。</title>
+  <meta name="description" content="阿琳的产品与交互作品集。探索 HomeMind、自由工作台、Digest、Starity，以及与 AI 一起创造的日常工具。" data-i18n-attr="content:meta.description">
+  <title data-i18n="meta.title">ALIN · 一些念头，几个世界。</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' rx='18' fill='%2319392d'/%3E%3Cpath d='M30 8v44M8 30h44M14 14l32 32M14 46l32-32' stroke='%23d8efa2' stroke-width='5'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="case-study.css">
@@ -14,10 +14,10 @@
   <script src="app.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#homemind">跳到作品</a>
+  <a class="skip-link" href="#homemind" data-i18n="skip">跳到作品</a>
   <header class="site-header">
-    <a href="#homemind" class="brand" aria-label="阿琳作品集首页"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2v36M2 20h36M7.3 7.3l25.4 25.4M7.3 32.7 32.7 7.3"/></svg><span>ALIN<span class="brand-cn"> / 阿琳</span></span></a>
-    <nav aria-label="主导航"><a href="#homemind">作品 <sup>04</sup></a><a href="#little-things">探索</a><a href="#about">关于与合作 <span>↗</span></a><a class="nav-pdf" href="downloads/ALIN-Portfolio.pdf" download="ALIN-作品集.pdf" aria-label="下载阿琳作品集 PDF">PDF ↓</a></nav>
+    <a href="#homemind" class="brand" aria-label="阿琳作品集首页" data-i18n-attr="aria-label:brand.aria"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2v36M2 20h36M7.3 7.3l25.4 25.4M7.3 32.7 32.7 7.3"/></svg><span>ALIN<span class="brand-cn"> / 阿琳</span></span></a>
+    <nav aria-label="主导航" data-i18n-attr="aria-label:nav.aria"><a href="#homemind" data-i18n-html="nav.work">作品 <sup>04</sup></a><a href="#little-things" data-i18n="nav.explore">探索</a><a href="#about" data-i18n-html="nav.about">关于与合作 <span>↗</span></a><div class="lang-switch" role="group" aria-label="语言 / Language"><button type="button" data-lang="zh" aria-pressed="true" lang="zh-CN">中</button><i aria-hidden="true">/</i><button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button></div><a class="nav-pdf" data-pdf-link href="downloads/ALIN-Portfolio.pdf" download="ALIN-作品集.pdf" aria-label="下载阿琳作品集 PDF" data-i18n-attr="aria-label:nav.pdf">PDF ↓</a></nav>
   </header>
 
   <main>
@@ -27,17 +27,17 @@
         <div class="project-copy">
           <p class="project-kicker"><span class="index">01 / 04</span><span>AI × EVERYDAY LIFE</span></p>
           <h1 id="home-title" data-drift>Home<span>Mind</span><i class="title-seed" aria-hidden="true">✳</i></h1>
-          <h2>让家，有一点懂你。</h2>
-          <p class="project-description">从一句日常对话，到一次恰好的安排。<br>让家庭助手在生活里，慢慢学会体贴。</p>
-          <button class="case-link" data-case="homemind">走进这个作品 <span class="round-arrow" aria-hidden="true">↗</span></button>
+          <h2 data-i18n="home.subtitle">让家，有一点懂你。</h2>
+          <p class="project-description" data-i18n-html="home.description">从一句日常对话，到一次恰好的安排。<br>让家庭助手在生活里，慢慢学会体贴。</p>
+          <button class="case-link" data-case="homemind" data-i18n-html="case.enter">走进这个作品 <span class="round-arrow" aria-hidden="true">↗</span></button>
         </div>
-        <div class="project-stage home-stage" data-parallax aria-label="HomeMind 真实界面预览">
+        <div class="project-stage home-stage" data-parallax aria-label="HomeMind 真实界面预览" data-i18n-attr="aria-label:home.stage">
           <div class="home-ring" aria-hidden="true"></div>
-          <button class="phone phone-back" data-zoom="assets/home-growth.png" data-caption="HomeMind · 成长：把反复出现的需要，整理为可以确认的习惯。" aria-label="放大 HomeMind 成长界面"><span class="phone-inner"><img src="assets/home-growth.png" alt="HomeMind 成长页面，展示正在形成和已经学会的清洁习惯" width="430" height="932"></span></button>
-          <button class="phone phone-front" data-zoom="assets/home-front.png" data-caption="HomeMind · 首页：从对话与今日计划开始。" aria-label="放大 HomeMind 首页"><span class="phone-inner"><img src="assets/home-front.png" alt="HomeMind 首页，包含今日计划和与 Rocky 对话的入口" width="430" height="932" fetchpriority="high"></span></button>
+          <button class="phone phone-back" data-zoom="assets/home-growth.png" data-caption="HomeMind · 成长：把反复出现的需要，整理为可以确认的习惯。" aria-label="放大 HomeMind 成长界面" data-i18n-attr="data-caption:home.growth.caption;aria-label:home.growth.zoom"><span class="phone-inner"><img src="assets/home-growth.png" alt="HomeMind 成长页面，展示正在形成和已经学会的清洁习惯" width="430" height="932" data-i18n-attr="alt:home.growth.alt"></span></button>
+          <button class="phone phone-front" data-zoom="assets/home-front.png" data-caption="HomeMind · 首页：从对话与今日计划开始。" aria-label="放大 HomeMind 首页" data-i18n-attr="data-caption:home.front.caption;aria-label:home.front.zoom"><span class="phone-inner"><img src="assets/home-front.png" alt="HomeMind 首页，包含今日计划和与 Rocky 对话的入口" width="430" height="932" fetchpriority="high" data-i18n-attr="alt:home.front.alt"></span></button>
         </div>
       </div>
-      <div class="world-footer"><a href="#workbench" class="scroll-invite">往下，另一个世界 <span>↓</span></a></div>
+      <div class="world-footer"><a href="#workbench" class="scroll-invite" data-i18n-html="home.next">往下，另一个世界 <span>↓</span></a></div>
     </section>
 
     <section class="world world-workbench" id="workbench" data-world="1" aria-labelledby="workbench-title">
@@ -46,26 +46,26 @@
         <div class="project-copy">
           <p class="project-kicker"><span class="index">02 / 04</span><span>A SPACE OF YOUR OWN</span></p>
           <h2 class="project-title" id="workbench-title" data-drift>a little<br><em>workspace.</em></h2>
-          <h3>桌面，长成自己的样子。</h3>
-          <p class="project-description">想法、日记、待办，各有一个舒服的位置。<br>把工作空间的决定权，交回自己手里。</p>
-          <button class="case-link" data-case="workbench">走进这个作品 <span class="round-arrow" aria-hidden="true">↗</span></button>
+          <h3 data-i18n="workbench.subtitle">桌面，长成自己的样子。</h3>
+          <p class="project-description" data-i18n-html="workbench.description">想法、日记、待办，各有一个舒服的位置。<br>把工作空间的决定权，交回自己手里。</p>
+          <button class="case-link" data-case="workbench" data-i18n-html="case.enter">走进这个作品 <span class="round-arrow" aria-hidden="true">↗</span></button>
         </div>
         <div class="project-stage desk-stage" data-parallax>
           <div class="desk-window">
             <div class="window-bar"><span class="traffic-lights"><i></i><i></i><i></i></span><span>ALIN'S WORKSPACE</span><span class="window-spark">✧</span></div>
-            <div class="desktop-demo" id="desktop-demo" data-desk-theme="dusk" aria-label="工作台交互片段，可以拖动组件并切换壁纸">
+            <div class="desktop-demo" id="desktop-demo" data-desk-theme="dusk" aria-label="工作台交互片段，可以拖动组件并切换壁纸" data-i18n-attr="aria-label:workbench.stage">
               <div class="desktop-horizon" aria-hidden="true"></div>
-              <div class="desk-widget widget-clock" data-drag style="--x:5%;--y:8%"><button class="drag-handle" aria-label="移动时钟组件，方向键调整位置"><span>◷ 时钟</span><span>⠿</span></button><strong id="live-clock">22:50</strong><p id="live-date">按自己的节奏，开始。</p></div>
-              <div class="desk-widget widget-note" data-drag style="--x:51%;--y:20%"><button class="drag-handle" aria-label="移动便签组件，方向键调整位置"><span>↗ 一个小念头</span><span>⠿</span></button><p>今天，也给好奇心<br>留一个位置。</p><span class="note-sign">take your time.</span></div>
-              <div class="desk-widget widget-todo" data-drag style="--x:19%;--y:48%"><button class="drag-handle" aria-label="移动待办组件，方向键调整位置"><span>☷ 今天的小事</span><span>⠿</span></button><label><input type="checkbox" checked><span>接住一个新想法</span></label><label><input type="checkbox"><span>做出一点小变化</span></label><label><input type="checkbox"><span>留点时间发呆</span></label></div>
-              <div class="desk-theme"><span>换个心情</span><button data-theme="dusk" class="theme-dusk" aria-label="青蓝壁纸" aria-pressed="true"></button><button data-theme="plum" class="theme-plum" aria-label="暮紫壁纸" aria-pressed="false"></button><button data-theme="forest" class="theme-forest" aria-label="森林壁纸" aria-pressed="false"></button></div>
-              <button class="desk-reset" type="button" aria-label="重置桌面组件位置">↺</button>
+              <div class="desk-widget widget-clock" data-drag style="--x:5%;--y:8%"><button class="drag-handle" aria-label="移动时钟组件，方向键调整位置" data-i18n-attr="aria-label:desk.clock.aria"><span data-i18n="desk.clock">◷ 时钟</span><span>⠿</span></button><strong id="live-clock">22:50</strong><p id="live-date" data-i18n="desk.start">按自己的节奏，开始。</p></div>
+              <div class="desk-widget widget-note" data-drag style="--x:51%;--y:20%"><button class="drag-handle" aria-label="移动便签组件，方向键调整位置" data-i18n-attr="aria-label:desk.note.aria"><span data-i18n="desk.note.label">↗ 一个小念头</span><span>⠿</span></button><p data-i18n-html="desk.note">今天，也给好奇心<br>留一个位置。</p><span class="note-sign">take your time.</span></div>
+              <div class="desk-widget widget-todo" data-drag style="--x:19%;--y:48%"><button class="drag-handle" aria-label="移动待办组件，方向键调整位置" data-i18n-attr="aria-label:desk.todo.aria"><span data-i18n="desk.todo.label">☷ 今天的小事</span><span>⠿</span></button><label><input type="checkbox" checked><span data-i18n="desk.todo1">接住一个新想法</span></label><label><input type="checkbox"><span data-i18n="desk.todo2">做出一点小变化</span></label><label><input type="checkbox"><span data-i18n="desk.todo3">留点时间发呆</span></label></div>
+              <div class="desk-theme"><span data-i18n="desk.mood">换个心情</span><button data-theme="dusk" class="theme-dusk" aria-label="青蓝壁纸" aria-pressed="true" data-i18n-attr="aria-label:desk.theme.dusk"></button><button data-theme="plum" class="theme-plum" aria-label="暮紫壁纸" aria-pressed="false" data-i18n-attr="aria-label:desk.theme.plum"></button><button data-theme="forest" class="theme-forest" aria-label="森林壁纸" aria-pressed="false" data-i18n-attr="aria-label:desk.theme.forest"></button></div>
+              <button class="desk-reset" type="button" aria-label="重置桌面组件位置" data-i18n-attr="aria-label:desk.reset">↺</button>
             </div>
           </div>
-          <button class="real-shot" data-zoom="assets/workbench-desktop.png" data-caption="阿琳工作台 · 日常桌面实际截图。" aria-label="查看工作台实际桌面截图"><img src="assets/workbench-desktop.png" alt="阿琳工作台日常桌面实际截图" width="2559" height="1599" loading="lazy"><span>查看实图 <b>↗</b></span></button>
+          <button class="real-shot" data-zoom="assets/workbench-desktop.png" data-caption="阿琳工作台 · 日常桌面实际截图。" aria-label="查看工作台实际桌面截图" data-i18n-attr="data-caption:workbench.shot.caption;aria-label:workbench.shot.aria"><img src="assets/workbench-desktop.png" alt="阿琳工作台日常桌面实际截图" width="2559" height="1599" loading="lazy" data-i18n-attr="alt:workbench.shot.alt"><span data-i18n-html="workbench.shot.label">查看实图 <b>↗</b></span></button>
         </div>
       </div>
-      <div class="world-footer"><a href="#digest" class="scroll-invite">接着，看想法如何落地 <span>↓</span></a></div>
+      <div class="world-footer"><a href="#digest" class="scroll-invite" data-i18n-html="workbench.next">接着，看想法如何落地 <span>↓</span></a></div>
     </section>
 
     <section class="world world-digest" id="digest" data-world="2" aria-labelledby="digest-title">
@@ -74,23 +74,23 @@
         <div class="project-copy">
           <p class="project-kicker"><span class="index">03 / 04</span><span>THOUGHTS INTO MOTION</span></p>
           <h2 class="project-title" id="digest-title" data-drift>Digest<span class="title-period">.</span></h2>
-          <h3>让想法，一步步落地。</h3>
-          <p class="project-description">消化、执行、沉淀。<br>让一件事的来处、进展和结果，都看得见。</p>
-          <button class="case-link" data-case="digest">走进这个作品 <span class="round-arrow" aria-hidden="true">↗</span></button>
+          <h3 data-i18n="digest.subtitle">让想法，一步步落地。</h3>
+          <p class="project-description" data-i18n-html="digest.description">消化、执行、沉淀。<br>让一件事的来处、进展和结果，都看得见。</p>
+          <button class="case-link" data-case="digest" data-i18n-html="case.enter">走进这个作品 <span class="round-arrow" aria-hidden="true">↗</span></button>
         </div>
         <div class="project-stage digest-stage" data-parallax>
           <div class="board-window">
             <div class="window-bar"><span class="traffic-lights"><i></i><i></i><i></i></span><span>DIGEST / FROM SKETCH TO SCREEN</span><span>↗</span></div>
             <div class="comparison" style="--split:43%">
-              <img class="comparison-image" src="assets/digest-draft.png" alt="Digest 看板早期界面草图" width="1479" height="868" loading="lazy">
-              <img class="comparison-image comparison-after" src="assets/digest-interface.png" alt="Digest 实际界面，展示消化区、执行区和沉淀区" width="2559" height="1506" loading="lazy">
-              <span class="compare-label before-label">草图</span><span class="compare-label after-label">实现</span><span class="compare-line" aria-hidden="true"><span>↔</span></span>
-              <input class="compare-range" type="range" min="0" max="100" value="43" aria-label="对比草图与实现，左右拖动调整">
+              <img class="comparison-image" src="assets/digest-draft.png" alt="Digest 看板早期界面草图" width="1479" height="868" loading="lazy" data-i18n-attr="alt:digest.sketch.alt">
+              <img class="comparison-image comparison-after" src="assets/digest-interface.png" alt="Digest 实际界面，展示消化区、执行区和沉淀区" width="2559" height="1506" loading="lazy" data-i18n-attr="alt:digest.built.alt">
+              <span class="compare-label before-label" data-i18n="digest.sketch">草图</span><span class="compare-label after-label" data-i18n="digest.built">实现</span><span class="compare-line" aria-hidden="true"><span>↔</span></span>
+              <input class="compare-range" type="range" min="0" max="100" value="43" aria-label="对比草图与实现，左右拖动调整" data-i18n-attr="aria-label:digest.compare">
             </div>
           </div>
         </div>
       </div>
-      <div class="world-footer"><a href="#starity" class="scroll-invite">接着，和小纪留下一点微光 <span>↓</span></a></div>
+      <div class="world-footer"><a href="#starity" class="scroll-invite" data-i18n-html="digest.next">接着，和小纪留下一点微光 <span>↓</span></a></div>
     </section>
 
     <section class="world world-starity" id="starity" data-world="3" aria-labelledby="starity-title">
@@ -99,34 +99,34 @@
         <div class="project-copy">
           <p class="project-kicker"><span class="index">04 / 04</span><span>A LITTLE CONTINUITY</span></p>
           <h2 class="project-title" id="starity-title" data-drift>Starity<span class="starity-spark" aria-hidden="true">✧</span></h2>
-          <h3>和小纪，把日常留成微光。</h3>
-          <p class="project-description">回看发生过的事，留下下一步，找回曾经的对话。<br>也让这个入口，长成自己喜欢的样子。</p>
-          <button class="case-link" data-case="starity">走进这个作品 <span class="round-arrow" aria-hidden="true">↗</span></button>
+          <h3 data-i18n="starity.subtitle">和小纪，把日常留成微光。</h3>
+          <p class="project-description" data-i18n-html="starity.description">回看发生过的事，留下下一步，找回曾经的对话。<br>也让这个入口，长成自己喜欢的样子。</p>
+          <button class="case-link" data-case="starity" data-i18n-html="case.enter">走进这个作品 <span class="round-arrow" aria-hidden="true">↗</span></button>
         </div>
-        <div class="project-stage starity-stage" data-parallax aria-label="Starity 手机真实界面">
-          <button class="phone phone-back" data-zoom="assets/starity-workshop.jpg" data-caption="Starity · 谷子框装扮工坊，阿琳提供的手机实拍。" aria-label="放大 Starity 装扮工坊"><span class="phone-inner"><img src="assets/starity-workshop.jpg" alt="Starity 谷子框装扮工坊的手机实拍" width="573" height="1280" loading="lazy"></span></button>
-          <button class="phone phone-front" data-zoom="assets/starity-timeline.jpg" data-caption="Starity · 日常时间线，阿琳提供的手机实拍。" aria-label="放大 Starity 时间线"><span class="phone-inner"><img src="assets/starity-timeline.jpg" alt="Starity 时间线的手机实拍" width="573" height="1280" loading="lazy"></span></button>
+        <div class="project-stage starity-stage" data-parallax aria-label="Starity 手机真实界面" data-i18n-attr="aria-label:starity.stage">
+          <button class="phone phone-back" data-zoom="assets/starity-workshop.jpg" data-caption="Starity · 谷子框装扮工坊，阿琳提供的手机实拍。" aria-label="放大 Starity 装扮工坊" data-i18n-attr="data-caption:starity.workshop.caption;aria-label:starity.workshop.zoom"><span class="phone-inner"><img src="assets/starity-workshop.jpg" alt="Starity 谷子框装扮工坊的手机实拍" width="573" height="1280" loading="lazy" data-i18n-attr="alt:starity.workshop.alt"></span></button>
+          <button class="phone phone-front" data-zoom="assets/starity-timeline.jpg" data-caption="Starity · 日常时间线，阿琳提供的手机实拍。" aria-label="放大 Starity 时间线" data-i18n-attr="data-caption:starity.timeline.caption;aria-label:starity.timeline.zoom"><span class="phone-inner"><img src="assets/starity-timeline.jpg" alt="Starity 时间线的手机实拍" width="573" height="1280" loading="lazy" data-i18n-attr="alt:starity.timeline.alt"></span></button>
         </div>
       </div>
-      <div class="world-footer"><a href="#little-things" class="scroll-invite">再去一间小屋坐坐 <span>↓</span></a></div>
+      <div class="world-footer"><a href="#little-things" class="scroll-invite" data-i18n-html="starity.next">再去一间小屋坐坐 <span>↓</span></a></div>
     </section>
 
     <section class="little-section naituan-section" id="little-things" aria-labelledby="little-title">
       <div class="naituan-layout">
         <div class="naituan-copy" data-reveal>
           <p class="eyebrow">A LITTLE WORLD, SHARED</p>
-          <h2 id="little-title" data-drift>一间小屋，<em>很多人来过。</em></h2>
-          <h3>奶团小屋</h3>
-          <p class="naituan-description">和一只白色小熊猫一起，布置小屋、玩几局小游戏。<br>没有教程，也不催促，只想让人回来时，被轻轻接住。</p>
+          <h2 id="little-title" data-drift data-i18n-html="naituan.title">一间小屋，<em>很多人来过。</em></h2>
+          <h3 data-i18n="naituan.name">奶团小屋</h3>
+          <p class="naituan-description" data-i18n-html="naituan.description">和一只白色小熊猫一起，布置小屋、玩几局小游戏。<br>没有教程，也不催促，只想让人回来时，被轻轻接住。</p>
           <dl class="naituan-stats">
-            <div><dt>人玩过</dt><dd>3.2<small>万</small></dd></div>
-            <div><dt>次浏览</dt><dd>3.8<small>万</small></dd></div>
-            <div><dt>赞与收藏</dt><dd>4400<small>+</small></dd></div>
+            <div><dt data-i18n="naituan.stat1.label">人玩过</dt><dd data-i18n-html="naituan.stat1.value">3.2<small>万</small></dd></div>
+            <div><dt data-i18n="naituan.stat2.label">次浏览</dt><dd data-i18n-html="naituan.stat2.value">3.8<small>万</small></dd></div>
+            <div><dt data-i18n="naituan.stat3.label">赞与收藏</dt><dd data-i18n-html="naituan.stat3.value">4400<small>+</small></dd></div>
           </dl>
-          <p class="naituan-source">小红书笔记与小工具数据 · 2026 年 10 月</p>
+          <p class="naituan-source" data-i18n="naituan.source">小红书笔记与小工具数据 · 2026 年 10 月</p>
           <div class="naituan-links">
-            <a class="naituan-play" href="https://starity777-byte.github.io/naituan/" target="_blank" rel="noopener">去小屋看看 <span class="round-arrow" aria-hidden="true">↗</span></a>
-            <a class="naituan-repo" href="https://github.com/starity777-byte/naituan" target="_blank" rel="noopener">开源仓库 ↗</a>
+            <a class="naituan-play" href="https://starity777-byte.github.io/naituan/" target="_blank" rel="noopener" data-i18n-html="naituan.play">去小屋看看 <span class="round-arrow" aria-hidden="true">↗</span></a>
+            <a class="naituan-repo" href="https://github.com/starity777-byte/naituan" target="_blank" rel="noopener" data-i18n="naituan.repo">开源仓库 ↗</a>
           </div>
         </div>
         <figure class="naituan-stage" data-explode data-reveal>
@@ -142,64 +142,64 @@
                 <img class="d-catbed" src="assets/naituan/cat-bed.webp" alt="">
               </div>
               <div class="layer layer-cat" style="--i:2">
-                <span class="ui-bubble">今天也是好奶团！</span>
+                <span class="ui-bubble" data-i18n="naituan.bubble">今天也是好奶团！</span>
                 <img class="d-cat" src="assets/naituan/naituan.webp" alt="">
                 <img class="d-flower" src="assets/naituan/flower.webp" alt="">
               </div>
               <div class="layer layer-ui" style="--i:3">
                 <span class="ui-paw"></span>
-                <span class="ui-pills"><i>鱼 3991</i><i>晶 5</i></span>
+                <span class="ui-pills"><i data-i18n="naituan.fish">鱼 3991</i><i data-i18n="naituan.gem">晶 5</i></span>
                 <span class="ui-rings"><i></i><i></i><i></i></span>
-                <span class="ui-nav"><b>窝</b><i>生活</i><i>我的</i></span>
+                <span class="ui-nav"><b data-i18n="naituan.nav.den">窝</b><i data-i18n="naituan.nav.life">生活</i><i data-i18n="naituan.nav.me">我的</i></span>
               </div>
             </div>
           </div>
           <ol class="explode-labels">
-            <li style="--i:3"><b>界面</b><span>入口大多收起来</span></li>
-            <li style="--i:2"><b>奶团</b><span>动作与回应</span></li>
-            <li style="--i:1"><b>家具</b><span>可以自由摆放</span></li>
-            <li style="--i:0"><b>房间</b><span>手绘底图</span></li>
+            <li style="--i:3"><b data-i18n="naituan.layer.ui">界面</b><span data-i18n="naituan.layer.ui.note">入口大多收起来</span></li>
+            <li style="--i:2"><b data-i18n="naituan.layer.cat">奶团</b><span data-i18n="naituan.layer.cat.note">动作与回应</span></li>
+            <li style="--i:1"><b data-i18n="naituan.layer.furniture">家具</b><span data-i18n="naituan.layer.furniture.note">可以自由摆放</span></li>
+            <li style="--i:0"><b data-i18n="naituan.layer.room">房间</b><span data-i18n="naituan.layer.room.note">手绘底图</span></li>
           </ol>
           <figcaption class="explode-caption">
-            <button type="button" class="explode-toggle" aria-pressed="false">合起来看</button>
-            <button type="button" class="explode-shot" data-zoom="assets/naituan-home.jpg" data-caption="奶团小屋 · 窝，奶团坐在软垫上打招呼。">实机截图 <span aria-hidden="true">↗</span></button>
+            <button type="button" class="explode-toggle" aria-pressed="false" data-i18n="naituan.toggle">合起来看</button>
+            <button type="button" class="explode-shot" data-zoom="assets/naituan-home.jpg" data-caption="奶团小屋 · 窝，奶团坐在软垫上打招呼。" data-i18n-html="naituan.shot" data-i18n-attr="data-caption:naituan.shot.caption">实机截图 <span aria-hidden="true">↗</span></button>
           </figcaption>
         </figure>
       </div>
     </section>
 
     <section class="lab-section" id="lab" aria-labelledby="lab-title">
-      <div class="lab-heading" data-reveal><p class="eyebrow">THE ONGOING EXPLORATIONS</p><h2 id="lab-title" data-drift>好奇心，<em>还在继续。</em></h2><p>一些从自己身边长出来的 AI 与工具实验。</p></div>
+      <div class="lab-heading" data-reveal><p class="eyebrow">THE ONGOING EXPLORATIONS</p><h2 id="lab-title" data-drift data-i18n-html="lab.title">好奇心，<em>还在继续。</em></h2><p data-i18n="lab.intro">一些从自己身边长出来的 AI 与工具实验。</p></div>
       <div class="lab-layout" data-reveal>
-        <div class="lab-list" role="tablist" aria-label="更多项目">
-          <button id="lab-tab-stone" class="lab-item is-selected" role="tab" aria-selected="true" aria-controls="lab-detail" data-lab="stone"><span>01</span><strong>Stone <small>石头</small></strong><b>↗</b></button>
-          <button id="lab-tab-xiaopi" class="lab-item" role="tab" aria-selected="false" aria-controls="lab-detail" data-lab="xiaopi" tabindex="-1"><span>02</span><strong>Xiaopi <small>小屁</small></strong><b>↗</b></button>
+        <div class="lab-list" role="tablist" aria-label="更多项目" data-i18n-attr="aria-label:lab.list">
+          <button id="lab-tab-stone" class="lab-item is-selected" role="tab" aria-selected="true" aria-controls="lab-detail" data-lab="stone"><span>01</span><strong>Stone <small data-i18n="lab.stone.gloss">石头</small></strong><b>↗</b></button>
+          <button id="lab-tab-xiaopi" class="lab-item" role="tab" aria-selected="false" aria-controls="lab-detail" data-lab="xiaopi" tabindex="-1"><span>02</span><strong>Xiaopi <small data-i18n="lab.xiaopi.gloss">小屁</small></strong><b>↗</b></button>
         </div>
-        <div class="lab-detail" id="lab-detail" role="tabpanel" aria-labelledby="lab-tab-stone" tabindex="0"><p class="eyebrow" id="lab-type">AN AI WITH CONTINUITY</p><h3 id="lab-detail-title">每次重新开始，<br>也能接住过去的自己。</h3><p id="lab-description">围绕对话消化、记忆召回与上下文组织持续探索。基于开源项目定制，从 Reasonix 到 DSH，寻找更贴近个人需要的实现方式。</p></div>
+        <div class="lab-detail" id="lab-detail" role="tabpanel" aria-labelledby="lab-tab-stone" tabindex="0"><p class="eyebrow" id="lab-type">AN AI WITH CONTINUITY</p><h3 id="lab-detail-title" data-i18n-html="lab.detail.title">每次重新开始，<br>也能接住过去的自己。</h3><p id="lab-description" data-i18n="lab.detail.description">围绕对话消化、记忆召回与上下文组织持续探索。基于开源项目定制，从 Reasonix 到 DSH，寻找更贴近个人需要的实现方式。</p></div>
       </div>
     </section>
 
     <section class="process-strip" id="approach" aria-labelledby="approach-title">
-      <div class="process-heading" data-reveal><p class="eyebrow">HOW I MAKE THINGS</p><h2 id="approach-title" data-drift>从身边的问题开始，<br>把想法做成可以试的东西。</h2></div>
+      <div class="process-heading" data-reveal><p class="eyebrow">HOW I MAKE THINGS</p><h2 id="approach-title" data-drift data-i18n-html="process.title">从身边的问题开始，<br>把想法做成可以试的东西。</h2></div>
       <div class="process-grid" data-reveal>
-        <article><span class="process-number">01 / NOTICE</span><h3>先找具体的不顺手</h3><p>先说清是哪个场景不顺手，再决定需要怎样的工具。</p></article>
-        <article><span class="process-number">02 / MAKE</span><h3>把关系变成可见的体验</h3><p>我定需求与方向，和 AI 一起把构思做成能试的原型。</p></article>
-        <article><span class="process-number">03 / REFINE</span><h3>在试用中继续调整</h3><p>在真实使用里找到负担，留下有用的，让作品继续长。</p></article>
+        <article><span class="process-number">01 / NOTICE</span><h3 data-i18n="process.1.title">先找具体的不顺手</h3><p data-i18n="process.1.body">先说清是哪个场景不顺手，再决定需要怎样的工具。</p></article>
+        <article><span class="process-number">02 / MAKE</span><h3 data-i18n="process.2.title">把关系变成可见的体验</h3><p data-i18n="process.2.body">我定需求与方向，和 AI 一起把构思做成能试的原型。</p></article>
+        <article><span class="process-number">03 / REFINE</span><h3 data-i18n="process.3.title">在试用中继续调整</h3><p data-i18n="process.3.body">在真实使用里找到负担，留下有用的，让作品继续长。</p></article>
       </div>
     </section>
 
     <section class="about-section" id="about" aria-labelledby="about-title">
       <div class="about-top"><p class="eyebrow">A LITTLE ABOUT ME</p><span>ALIN / 阿琳</span></div>
-      <div class="about-content" data-reveal><h2 id="about-title" data-drift>在想法和现实之间，<br>我喜欢<span>动手做一点。</span></h2><div><p>我是阿琳，也叫 Lynix。一个好想法，不该只住在脑海里。你觉得呢？</p><div class="case-download"><a href="downloads/ALIN-Portfolio.pdf" download="ALIN-作品集.pdf">带走一份作品集 PDF <span aria-hidden="true">↓</span></a></div></div></div>
-      <div class="contact-block" data-reveal><div><span class="availability"><i></i> 开放 AI 产品与技术合作</span><h3>下一个想法，<em>一起做？</em></h3></div><div class="contact-actions"><a href="mailto:limeilin839@gmail.com" class="email-link">limeilin839@gmail.com <span>↗</span></a><button type="button" id="copy-email">复制邮箱 <span>⧉</span></button><span id="copy-status" role="status" aria-live="polite"></span></div></div>
-      <footer><span>© 2026 ALIN</span><span>一些念头，几个世界。</span><a href="#homemind">回到第一个世界 ↑</a></footer>
+      <div class="about-content" data-reveal><h2 id="about-title" data-drift data-i18n-html="about.title">在想法和现实之间，<br>我喜欢<span>动手做一点。</span></h2><div><p data-i18n="about.body">我是阿琳，也叫 Lynix。一个好想法，不该只住在脑海里。你觉得呢？</p><div class="case-download"><a data-pdf-link href="downloads/ALIN-Portfolio.pdf" download="ALIN-作品集.pdf" data-i18n-html="about.pdf">带走一份作品集 PDF <span aria-hidden="true">↓</span></a></div></div></div>
+      <div class="contact-block" data-reveal><div><span class="availability" data-i18n-html="contact.availability"><i></i> 开放 AI 产品与技术合作</span><h3 data-i18n-html="contact.title">下一个想法，<em>一起做？</em></h3></div><div class="contact-actions"><a href="mailto:limeilin839@gmail.com" class="email-link">limeilin839@gmail.com <span>↗</span></a><button type="button" id="copy-email" data-i18n-html="contact.copy">复制邮箱 <span>⧉</span></button><span id="copy-status" role="status" aria-live="polite"></span></div></div>
+      <footer><span>© 2026 ALIN</span><span data-i18n="footer.tagline">一些念头，几个世界。</span><a href="#homemind" data-i18n="footer.back">回到第一个世界 ↑</a></footer>
     </section>
   </main>
 
-  <nav class="world-switcher" aria-label="切换作品"><a href="#homemind" class="is-current" aria-current="location"><span>01</span><b>HomeMind</b></a><a href="#workbench"><span>02</span><b>工作台</b></a><a href="#digest"><span>03</span><b>Digest</b></a><a href="#starity"><span>04</span><b>Starity</b></a><span class="switcher-progress"><i></i></span></nav>
+  <nav class="world-switcher" aria-label="切换作品" data-i18n-attr="aria-label:switcher.aria"><a href="#homemind" class="is-current" aria-current="location"><span>01</span><b>HomeMind</b></a><a href="#workbench"><span>02</span><b data-i18n="switcher.workbench">工作台</b></a><a href="#digest"><span>03</span><b>Digest</b></a><a href="#starity"><span>04</span><b>Starity</b></a><span class="switcher-progress"><i></i></span></nav>
   <div class="pointer-label" aria-hidden="true">VIEW ↗</div>
-  <dialog id="case-dialog" class="case-dialog" aria-labelledby="case-title"><div class="case-topbar"><a href="#homemind" class="case-brand" data-close>ALIN / SELECTED WORK</a><button class="close-button" data-close aria-label="关闭项目详情">返回作品 <span>×</span></button></div><div id="case-content"></div></dialog>
-  <dialog id="lightbox" class="lightbox" aria-label="作品图片大图"><button class="lightbox-close" type="button" aria-label="关闭大图">关闭 ×</button><img id="lightbox-image" alt=""><p id="lightbox-caption"></p></dialog>
+  <dialog id="case-dialog" class="case-dialog" aria-labelledby="case-title"><div class="case-topbar"><a href="#homemind" class="case-brand" data-close>ALIN / SELECTED WORK</a><button class="close-button" data-close aria-label="关闭项目详情" data-i18n-html="case.close" data-i18n-attr="aria-label:case.close.aria">返回作品 <span>×</span></button></div><div id="case-content"></div></dialog>
+  <dialog id="lightbox" class="lightbox" aria-label="作品图片大图" data-i18n-attr="aria-label:lightbox.aria"><button class="lightbox-close" type="button" aria-label="关闭大图" data-i18n="lightbox.close" data-i18n-attr="aria-label:lightbox.close.aria">关闭 ×</button><img id="lightbox-image" alt=""><p id="lightbox-caption"></p></dialog>
+  <script src="i18n.js"></script>
 </body>
 </html>
-
