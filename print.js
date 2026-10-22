@@ -46,7 +46,7 @@
         <div><h2 class="big">${esc(t('footer span:nth-child(2)'))}</h2></div>
         <p class="small" style="letter-spacing:.06em">HomeMind / ${esc(C.workbench.title)} / Digest / Starity / ${esc(t('#little-things h3'))}</p>
       </div>
-      <div class="phones" style="height:100%;padding:10px 0 0">${img('home-front.png','phone')}${img('home-growth.png','phone')}</div>
+      <div class="phones phones-cover">${img('home-front.png','phone')}${img('home-growth.png','phone')}</div>
     </div>`, {dark:true, note:`${esc(t('#homemind .project-copy h2'))}`}));
 
     // 02 About + index

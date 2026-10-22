@@ -66,3 +66,7 @@ figcaption{font-size:12px;line-height:1.6;color:var(--muted)}
 .card{border-top:1px solid var(--rule);padding-top:22px}
 .mail{font-size:34px;color:var(--ink);font-weight:600;letter-spacing:-.01em}
 .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle}
+
+/* Cover: shorter phone frames (scale down; crop from bottom if needed) */
+.phones-cover{height:68%;align-self:center;padding:0}
+.phones-cover img.phone{height:100%;width:auto;max-height:460px;object-fit:cover;object-position:top center}
