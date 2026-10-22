@@ -1,5 +1,5 @@
 import http from 'node:http';
-import { readFile, readdir } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 
 const allowed = new Map([
   ['/', ['index.html', 'text/html; charset=utf-8']],
@@ -10,8 +10,7 @@ const allowed = new Map([
   ['/case-study.css', ['case-study.css', 'text/css; charset=utf-8']],
   ['/downloads/ALIN-Portfolio.pdf', ['downloads/ALIN-Portfolio.pdf', 'application/pdf']],
 ]);
-const assets = ['home-front.png','home-growth.png','home-family.png','home-chat.png','home-plan.png','digest-interface.png','digest-draft.png','workbench.png','workbench-desktop.png','workbench-runtime.png','workbench-personal.png','starity-timeline.jpg','starity-tasks.jpg','starity-timeline-focus.jpg','starity-workshop.jpg','starity-search.jpg'];
-assets.push(...(await readdir(new URL('assets/', import.meta.url))).filter(file => /^pet-[a-z0-9-]+\.(png|webp)$/.test(file)));
+const assets = ['home-front.png','home-growth.png','home-family.png','home-chat.png','home-plan.png','digest-interface.png','digest-draft.png','workbench.png','workbench-desktop.png','workbench-runtime.png','workbench-personal.png','starity-timeline.jpg','starity-tasks.jpg','starity-timeline-focus.jpg','starity-workshop.jpg','starity-search.jpg','naituan-home.jpg'];
 for (const file of assets) allowed.set(`/assets/${file}`, [`assets/${file}`, file.endsWith('.webp') ? 'image/webp' : file.endsWith('.jpg') ? 'image/jpeg' : 'image/png']);
 const port = Number(process.argv[2] || 4390);
 http.createServer(async (request, response) => {

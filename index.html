@@ -127,22 +127,33 @@
           <span class="stage-note">阿琳的手机实拍 · 点击细看 <span>↗</span></span>
         </div>
       </div>
-      <div class="world-footer"><span>需求 / 审美方向 / 与小纪协同实现</span><a href="#little-things" class="scroll-invite">再看一点小小的陪伴 <span>↓</span></a></div>
+      <div class="world-footer"><span>需求 / 审美方向 / 与小纪协同实现</span><a href="#little-things" class="scroll-invite">再去一间小屋坐坐 <span>↓</span></a></div>
     </section>
 
-    <section class="little-section" id="little-things" aria-labelledby="little-title">
-      <div class="little-heading"><div><p class="eyebrow">LITTLE THINGS, CLOSE BY</p><h2 id="little-title">小小陪伴，<em>刚刚好。</em></h2></div><p>给日常添一点性格。<br>两只住在桌面角落的小猫。</p></div>
-      <div class="little-grid">
-        <article class="little-card little-naituan">
-          <div class="little-stage"><span class="little-note">a soft little hello.</span><img src="assets/pet-naituan.png" alt="奶团桌宠，手绘小猫和问候气泡" width="445" height="512" loading="lazy"></div>
-          <div class="little-copy"><p class="little-kind">01 / 手绘桌宠</p><h3>奶团</h3><p>摸摸、喂食、钻纸箱。<br>把轻轻的回应，放进忙碌的间隙。</p><button type="button" data-pet="naituan">看几个动作 <span aria-hidden="true">↗</span></button></div>
-        </article>
-        <article class="little-card little-pixel">
-          <div class="little-stage"><span class="little-note">a tiny pixel companion.</span><img src="assets/pet-pixel.png" alt="像素小白猫桌宠，蓝眼睛和粉色爪垫" width="768" height="768" loading="lazy"></div>
-          <div class="little-copy"><p class="little-kind">02 / 像素桌宠</p><h3>像素小白猫</h3><p>散步、舔爪、打个盹。<br>不必一直互动，也能安静待在身边。</p><button type="button" data-pet="pixel">看几个动作 <span aria-hidden="true">↗</span></button></div>
-        </article>
+    <section class="little-section naituan-section" id="little-things" aria-labelledby="little-title">
+      <div class="naituan-layout">
+        <div class="naituan-copy">
+          <p class="eyebrow">A LITTLE WORLD, SHARED</p>
+          <h2 id="little-title">一间小屋，<em>很多人来过。</em></h2>
+          <h3>奶团小屋</h3>
+          <p class="naituan-description">和一只白色小熊猫一起，布置小屋、玩几局小游戏。<br>没有教程，也不催促，只想让人回来时，被轻轻接住。</p>
+          <dl class="naituan-stats">
+            <div><dt>人玩过</dt><dd>3.2<small>万</small></dd></div>
+            <div><dt>次浏览</dt><dd>3.8<small>万</small></dd></div>
+            <div><dt>赞与收藏</dt><dd>4400<small>+</small></dd></div>
+          </dl>
+          <p class="naituan-source">小红书笔记与小工具数据 · 2026 年 10 月</p>
+          <div class="naituan-links">
+            <a class="naituan-play" href="https://starity777-byte.github.io/naituan/" target="_blank" rel="noopener">去小屋看看 <span class="round-arrow" aria-hidden="true">↗</span></a>
+            <a class="naituan-repo" href="https://github.com/starity777-byte/naituan" target="_blank" rel="noopener">开源仓库 ↗</a>
+          </div>
+        </div>
+        <div class="naituan-stage">
+          <span class="little-note">come home, little one.</span>
+          <button class="naituan-phone" data-zoom="assets/naituan-home.jpg" data-caption="奶团小屋 · 窝，奶团坐在软垫上打招呼。" aria-label="放大奶团小屋首页截图"><span><img src="assets/naituan-home.jpg" alt="奶团小屋首页：和室里，白色小熊猫奶团坐在软垫上，气泡写着今天也是好奶团" width="480" height="1028" loading="lazy"></span></button>
+          <span class="naituan-tags"><span>养成小游戏</span><span>手绘风</span><span>已上线</span></span>
+        </div>
       </div>
-      <p class="little-footnote">Windows 桌面小作品 · 使用原作素材展示动作</p>
     </section>
 
     <section class="lab-section" id="lab" aria-labelledby="lab-title">
@@ -177,7 +188,6 @@
   <div class="pointer-label" aria-hidden="true">VIEW ↗</div>
   <dialog id="case-dialog" class="case-dialog" aria-labelledby="case-title"><div class="case-topbar"><a href="#homemind" class="case-brand" data-close>ALIN / SELECTED WORK</a><button class="close-button" data-close aria-label="关闭项目详情">返回作品 <span>×</span></button></div><div id="case-content"></div></dialog>
   <dialog id="lightbox" class="lightbox" aria-label="作品图片大图"><button class="lightbox-close" type="button" aria-label="关闭大图">关闭 ×</button><img id="lightbox-image" alt=""><p id="lightbox-caption"></p></dialog>
-  <dialog id="pet-dialog" class="pet-dialog" aria-labelledby="pet-title"><button class="pet-close" type="button" aria-label="关闭桌宠展示">关闭 ×</button><div class="pet-layout"><div class="pet-preview"><img id="pet-image" alt=""></div><div class="pet-description"><p class="eyebrow">A LITTLE COMPANION</p><h2 id="pet-title"></h2><p id="pet-intro"></p><div id="pet-actions" class="pet-actions" aria-label="选择桌宠动作"></div><p id="pet-status" class="pet-status" role="status" aria-live="polite">选一个动作，看看它的回应。</p><p class="pet-caption">原作动作展示 · 每次播放几秒后回到静止</p></div></div></dialog>
 </body>
 </html>
 
