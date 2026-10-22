@@ -244,12 +244,9 @@ function selectLab(button, focus = false) {
     item.classList.toggle('is-selected', item === button);
   });
   $('#lab-detail').setAttribute('aria-labelledby', button.id);
-  $('.lab-symbol').textContent = data.symbol;
   $('#lab-type').textContent = data.type;
   $('#lab-detail-title').innerHTML = data.title;
   $('#lab-description').textContent = data.description;
-  $('#lab-chips').innerHTML = data.chips.map(chip => `<span>${chip}</span>`).join('');
-  $('#lab-status').textContent = data.status;
   $('#lab-detail').classList.remove('is-changing');
   requestAnimationFrame(() => $('#lab-detail').classList.add('is-changing'));
   if (focus) button.focus();
@@ -267,9 +264,33 @@ labButtons.forEach((button, index) => {
   });
 });
 $('#copy-email').addEventListener('click', async () => {
-  try { await navigator.clipboard.writeText('1394960816@qq.com'); $('#copy-status').textContent = '已复制，期待你的来信。'; }
-  catch { $('#copy-status').textContent = '邮箱：1394960816@qq.com'; }
+  try { await navigator.clipboard.writeText('limeilin839@gmail.com'); $('#copy-status').textContent = '已复制，期待你的来信。'; }
+  catch { $('#copy-status').textContent = '邮箱：limeilin839@gmail.com'; }
 });
+
+// Light sections ease in once, the same way each work does when it becomes active.
+const revealItems = $$('[data-reveal]');
+if ('IntersectionObserver' in window && !reducedMotion.matches) {
+  document.documentElement.classList.add('can-reveal');
+  const revealer = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('is-in');
+    revealer.unobserve(entry.target);
+  }), {threshold: .18, rootMargin: '0px 0px -8% 0px'});
+  revealItems.forEach(item => revealer.observe(item));
+}
+
+// Big titles drift a little with scroll progress: 0 as they enter, 1 as they leave.
+const driftTitles = $$('[data-drift]');
+function updateDrift() {
+  if (reducedMotion.matches) return;
+  driftTitles.forEach(title => {
+    const rect = title.getBoundingClientRect();
+    if (rect.bottom < -200 || rect.top > innerHeight + 200) return;
+    const progress = clamp((innerHeight - rect.top) / (innerHeight + rect.height), 0, 1);
+    title.style.setProperty('--drift', progress.toFixed(3));
+  });
+}
 
 // Native scrolling stays in charge; motion only affects the presentation.
 const worlds = $$('.world');
@@ -279,6 +300,7 @@ let frame = 0;
 let pointer = {x:0,y:0,currentX:0,currentY:0};
 function updateScene() {
   frame = 0;
+  updateDrift();
   const center = innerHeight * .5;
   let closest = 0;
   let distance = Infinity;

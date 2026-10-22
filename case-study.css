@@ -389,3 +389,15 @@
   .world-workbench .real-shot img { aspect-ratio: auto; }
   .world-workbench .real-shot > span { font-size: 10px; padding: 9px 12px; }
 }
+
+/* Scroll feel: sections ease in once; big titles drift with scroll progress. */
+.can-reveal [data-reveal] { opacity: 0; transform: translateY(22px); transition: opacity .9s var(--ease), transform 1.1s var(--ease); }
+.can-reveal [data-reveal].is-in { opacity: 1; transform: none; }
+.can-reveal .process-grid[data-reveal] > *, .can-reveal .lab-layout[data-reveal] > * { transition: opacity .9s var(--ease), transform 1.1s var(--ease); }
+.can-reveal .process-grid[data-reveal]:not(.is-in) > * { opacity: 0; transform: translateY(16px); }
+.process-grid[data-reveal] > :nth-child(2) { transition-delay: .12s; }
+.process-grid[data-reveal] > :nth-child(3) { transition-delay: .24s; }
+[data-drift] { --drift: .5; translate: 0 calc((.5 - var(--drift)) * 36px); }
+[data-drift] em, [data-drift] > span:not(.starity-spark):not(.title-period) { opacity: calc(.55 + var(--drift) * .9); }
+@media (prefers-reduced-motion: reduce) { [data-drift] { translate: none; } [data-drift] em, [data-drift] > span { opacity: 1; } }
+.lab-detail { min-height: 0; }
